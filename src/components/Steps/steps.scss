@@ -1,0 +1,26 @@
+@use 'src/styles/vars';
+
+.steps {
+  font-size: 1.2em;
+  padding: 2rem;
+  border-radius: 1rem 1rem 0 0;
+  background-color: #d8d8d8;
+  margin-top: 1.5em;
+  text-align: left;
+
+  .step {
+    line-height: 1.5;
+
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/::before
+    // on ajoute un pseudo-élément pour la décoration
+    &::before {
+      // l'attribut content est obligatoire, sinon l'élément ne s'affiche pas
+      content: "";
+      background-color: vars.$mainColor;
+      width: 1.2rem;
+      height: 1px;
+      display: inline-block;
+      margin: 0.3rem 0.5em;
+    }
+  }
+}
